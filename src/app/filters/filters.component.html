@@ -1,0 +1,32 @@
+<div class="cmp-filters">
+    <h5 class="cmp-filters__heading">Filters</h5>
+    <div class="cmp-filters__section-div">
+        <div  class="cmp-filters__section-heading">
+            <span >Launch Year</span>
+            <hr class="cmp-filters__horizontal-line"/>
+        </div>
+        <div class="container row">
+            <div *ngFor="let year of yearsArray ; let i = index" class="col-sm-6 cmp-filters__button">
+            <input  type="button" class="btn cmp-filters__button--input year" value= "{{year}}" (click)="onYearClick(year, i)" id="year-{{i}}">
+        </div>
+        </div>
+        <div  class="cmp-filters__section-heading">
+        <span class="cmp-filters__section-heading">Succesful Launch</span>
+        <hr class="cmp-filters__horizontal-line"/>
+    </div>
+        <div class=" container row">
+            <div *ngFor="let val of booleanValArray; let i = index" class="col-sm-6 cmp-filters__button">
+            <input  type="button" class="btn cmp-filters__button--input success-launch" value= "{{val}}" id="success-launch-{{i}}" (click)="onSuccessLaunchClick(val, i)">
+        </div>
+        </div>
+        <div  class="cmp-filters__section-heading">
+        <span class="cmp-filters__section-heading">Succesful Landing</span>
+        <hr class="cmp-filters__horizontal-line"/>
+    </div>
+        <div class=" container row">
+            <div *ngFor="let val of booleanValArray let i = index" class="col-sm-6 cmp-filters__button">
+                <input  type="button" class="btn cmp-filters__button--input success-land" value= "{{val}}" id="success-land-{{i}}" (click)="onSuccessLandClick(val, i)">
+            </div>        
+        </div>
+    </div>
+</div>

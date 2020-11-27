@@ -1,0 +1,35 @@
+<section>
+    <div class="row">
+     <div class="cmp-card col-sm-12 col-md-6 col-lg-3" *ngFor = "let cardData of cardsData">
+        <div class="cmp-card__img-container">
+            <img srcset="{{cardData.links.mission_patch_small}} 1024w,
+        {{cardData.links.mission_patch_small}} 1025w"
+         sizes="(max-width: 1024px) 1024px,
+                1025px"
+         src="{{cardData.links.mission_patch_small}}"
+         alt="Space X Image" class="img-fluid"> 
+        </div>
+        <div class="cmp-card__card-content cmp-card__mission-details">
+            <span>{{cardData.mission_name}}</span> #<span>{{cardData.flight_number}}</span>
+        </div>
+        <div class="cmp-card__card-content">
+            <span class="cmp-card__text">Mission Ids:</span>
+            <ul *ngFor="let id of cardData.mission_id">
+                <li class="cmp-card__value">{{id}}</li>
+            </ul>
+        </div>
+        <div class="cmp-card__card-content">
+            <span class="cmp-card__text">Launch Year:</span>
+            <span class="cmp-card__value"> {{cardData.launch_year}}</span>
+        </div>
+        <div class="cmp-card__card-content">
+            <span  class="cmp-card__text">Succesful Launch:</span>
+            <span class="cmp-card__value"> {{cardData.launch_success}}</span>
+        </div>
+        <div class="cmp-card__card-content">
+            <span  class="cmp-card__text">Succesful Landing:</span>
+            <span class="cmp-card__value"> {{cardData.land_success}}</span>
+        </div>
+    </div>
+    </div>
+    </section>

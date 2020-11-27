@@ -1,0 +1,23 @@
+.cmp-filters{
+    &__button{
+        align-items: center;
+        display: flex;
+        margin-bottom: 10px;
+        &--input{
+            width: 100%;
+            background-color: forestgreen;
+            border-color: forestgreen;
+            color: white;
+            &.active{
+                background-color: darkgreen;
+                border-color: darkgreen;
+            }
+        }
+    }
+    &__section-heading{
+        text-align: center;
+    }
+    &__horizontal-line{
+        width: 50%;
+    }
+}
