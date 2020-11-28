@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SapcexService} from '../app/service/sapcex.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import {SapcexService} from '../app/service/sapcex.service';
 export class AppComponent implements OnInit {
   title = 'spacex';
   url: string;
-  constructor(private service: SapcexService){
+  constructor(){
 
   }
   getServiceParams(val){
