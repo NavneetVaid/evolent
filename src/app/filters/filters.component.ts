@@ -11,7 +11,7 @@ export class FiltersComponent implements OnInit {
   selectedYear: string = null;
   selectedLaunch: string = null;
   selectedLanding: string = null;
-  @Output() serviceData = new EventEmitter();
+  @Output() serviceUrl = new EventEmitter();
   constructor(private spaceXService: SapcexService) { }
 
   ngOnInit(): void {
@@ -59,9 +59,6 @@ export class FiltersComponent implements OnInit {
   }
 
   requestData(){
-    this.spaceXService.getCardsData(this.generateQueryUrl()).subscribe(d => {
-      console.log(d);
-      this.serviceData.emit(d);
-    });
+    this.serviceUrl.emit(this.generateQueryUrl());
   }
 }

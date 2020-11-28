@@ -8,13 +8,12 @@ import {SapcexService} from '../app/service/sapcex.service';
 })
 export class AppComponent implements OnInit {
   title = 'spacex';
-  cardData: any =[];
+  url: string;
   constructor(private service: SapcexService){
 
   }
-  getServiceData(val){
-    console.log('Emmitted Value in app component', val)
-    this.cardData = val;
+  getServiceParams(val){
+    this.url = val;
   }
   ngOnInit(){
   

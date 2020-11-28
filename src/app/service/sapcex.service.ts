@@ -13,7 +13,7 @@ export class SapcexService {
       baseUrl += `${queryParamString}` 
     }
     return this.http.get(`${baseUrl}`).pipe(catchError(error => {
-      return of(null);
+      return of([]);
     })
     );
   }

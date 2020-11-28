@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import {SapcexService} from '../service/sapcex.service';
 
 @Component({
@@ -8,18 +8,33 @@ import {SapcexService} from '../service/sapcex.service';
 })
 export class CardsComponent implements OnInit, OnChanges {
   cardsData: any = [];
-  @Input() serviceData: any =[];
+  dataLoaded: boolean = false;
+  serviceError: boolean = false;
+  
+  @Input() query: string;
   constructor(private spaceXService: SapcexService) { }
 
   ngOnChanges(changes : SimpleChanges){
-    this.cardsData = changes.serviceData.currentValue;
+    this.requestData(changes.query.currentValue);
   }
+  
   ngOnInit(): void {
-    this.spaceXService.getCardsData().subscribe(cardData => {
+    this.requestData();
+  }
+
+  requestData(queryParam?: string){
+    this.dataLoaded = false;
+    this.serviceError = false;
+    this.spaceXService.getCardsData(queryParam).subscribe(cardData => {
       this.cardsData = cardData;
-    })
+    }, error => {
+      this.serviceError = true;
+    },()=>{  
+      this.dataLoaded = true;
+      this.serviceError = false;
+    });
   }
-  }
+}
   
 
 
