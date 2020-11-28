@@ -14,14 +14,17 @@ export class CardsComponent implements OnInit, OnChanges {
   @Input() query: string;
   constructor(private spaceXService: SapcexService) { }
 
+  // Detecting changes in input property query
   ngOnChanges(changes : SimpleChanges){
     this.requestData(changes.query.currentValue);
   }
   
+  // Call for requesting data for initial load without any filters
   ngOnInit(): void {
     this.requestData();
   }
 
+  // Requesting data from service
   requestData(queryParam?: string){
     this.dataLoaded = false;
     this.serviceError = false;

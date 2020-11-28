@@ -4,7 +4,7 @@
         <div class="cmp-card__img-container">
             <img  src="{{cardData.links.mission_patch_small}}"
             srcset="{{cardData.links.mission_patch_small}} 700w,
-        {{cardData.links.mission_patch}} 800w"
+        {{cardData.links.mission_patch}} 1980w"
         alt="Space X Image" class="img-fluid"> 
         </div>
         <div class="cmp-card__card-content cmp-card__mission-details">
@@ -26,7 +26,7 @@
         </div>
         <div class="cmp-card__card-content">
             <span  class="cmp-card__text">Succesful Landing:</span>
-            <span class="cmp-card__value"> {{cardData.land_success}}</span>
+            <span class="cmp-card__value"> {{cardData.rocket.first_stage.cores[0].land_success}}</span>
         </div>
     </div>
     </div>

@@ -17,25 +17,31 @@ export class FiltersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Function called on click of year filters.
   onYearClick(year, i){
    this.removeActiveClasses('year');
    document.getElementById(`year-${i}`).classList.add('active');
    this.selectedYear = year;
-   this.requestData();
+   this.emitQueryString();
   }
 
+  // Function called on click of successful launch filter
   onSuccessLaunchClick(val:string , i:number){
     this.removeActiveClasses('success-launch');
     document.getElementById(`success-launch-${i}`).classList.add('active');
     this.selectedLaunch = val.toLowerCase();
-    this.requestData();
+    this.emitQueryString();
   }
+
+  // Function called on click of successful land filter
   onSuccessLandClick(val:string , i:number){
     this.removeActiveClasses('success-land');
     document.getElementById(`success-land-${i}`).classList.add('active');
     this.selectedLanding = val.toLowerCase();
-    this.requestData();
+    this.emitQueryString();
   }
+
+  // Common function to remove active class from pre selected filters
   removeActiveClasses(elClass){
     const elArray: HTMLElement[] = Array.from(document.querySelectorAll(`.${elClass}`));
     elArray.forEach(el => {
@@ -43,6 +49,7 @@ export class FiltersComponent implements OnInit {
     })
   }
 
+  // Function to generate query params with all selected filters
   generateQueryUrl(){
     let queryString = '';
     if(this.selectedYear !=null){
@@ -57,8 +64,9 @@ export class FiltersComponent implements OnInit {
 
     return queryString;
   }
-
-  requestData(){
+  
+  // Emit generated query testing.
+  emitQueryString(){
     this.serviceUrl.emit(this.generateQueryUrl());
   }
 }

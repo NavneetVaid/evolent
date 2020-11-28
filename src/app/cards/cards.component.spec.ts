@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {SapcexService} from '../service/sapcex.service';
 import { CardsComponent } from './cards.component';
-import { from } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SimpleChange } from '@angular/core';
+
 describe('CardsComponent', () => {
   let component: CardsComponent;
   let fixture: ComponentFixture<CardsComponent>;
@@ -42,4 +42,5 @@ describe('CardsComponent', () => {
     component.ngOnInit();
     expect(spy).toHaveBeenCalled();
   });
+
 });
