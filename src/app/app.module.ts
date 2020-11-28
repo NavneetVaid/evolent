@@ -12,7 +12,7 @@ import { CardsComponent } from './cards/cards.component';
     CardsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule
   ],
   providers: [],

@@ -1,3 +1,7 @@
+$darkgreen: #008000;
+$forestgreen: #228b22;
+$white: #ffffff;
+
 .cmp-filters{
     &__button{
         align-items: center;
@@ -5,12 +9,12 @@
         margin-bottom: 10px;
         &--input{
             width: 100%;
-            background-color: forestgreen;
-            border-color: forestgreen;
-            color: white;
+            background-color: $forestgreen;
+            border-color: $forestgreen;
+            color: $white;
             &.active{
-                background-color: darkgreen;
-                border-color: darkgreen;
+                background-color: $darkgreen;
+                border-color: $darkgreen;
             }
         }
     }

@@ -1,7 +1,10 @@
+$darkgray: #a9a9a9;
+$blue: #0000ff;
+$white: #ffffff;
 .cmp-card{
-    border: 5px solid darkgray;
+    border: 5px solid $darkgray;
     border-radius: 0.75rem;
-    background-color: #ffffff;
+    background-color: $white;
     &__text{
         font-size: 16px;
         font-weight: 600;
@@ -10,7 +13,7 @@
         padding-bottom: 15px;
     }
     &__img-container{
-    background: darkgrey;
+    background:$darkgray;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -18,10 +21,10 @@
     }
     &__mission-details{
         font-weight: 700;
-        color: blue;
+        color:$blue;
     }
     &__card-value{
-        color: blue;
+        color: $blue;
     }
     &__no-data{
         display: flex;
