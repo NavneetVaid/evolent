@@ -1,13 +1,11 @@
-<section>
-    <div class="row">
+<section *ngIf = '!serviceError'>
+    <div class="row" *ngIf="cardsData.length > 0 && dataLoaded">
      <div class="cmp-card col-sm-12 col-md-6 col-lg-3" *ngFor = "let cardData of cardsData">
         <div class="cmp-card__img-container">
-            <img srcset="{{cardData.links.mission_patch_small}} 1024w,
-        {{cardData.links.mission_patch_small}} 1025w"
-         sizes="(max-width: 1024px) 1024px,
-                1025px"
-         src="{{cardData.links.mission_patch_small}}"
-         alt="Space X Image" class="img-fluid"> 
+            <img  src="{{cardData.links.mission_patch_small}}"
+            srcset="{{cardData.links.mission_patch_small}} 700w,
+        {{cardData.links.mission_patch}} 800w"
+        alt="Space X Image" class="img-fluid"> 
         </div>
         <div class="cmp-card__card-content cmp-card__mission-details">
             <span>{{cardData.mission_name}}</span> #<span>{{cardData.flight_number}}</span>
@@ -32,4 +30,10 @@
         </div>
     </div>
     </div>
-    </section>
+    <div class="row cmp-card__no-data" *ngIf="cardsData.length === 0 && dataLoaded">
+        <span>Alas ! No Launches found for specified filters !</span>
+    </div>
+    <div class="row cmp-card__no-data" *ngIf= "!dataLoaded">
+        <span>Loading Data ....</span>
+    </div>
+</section>
